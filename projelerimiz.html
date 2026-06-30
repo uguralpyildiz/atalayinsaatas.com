@@ -75,783 +75,934 @@
     </div>
   </div>
 
-  <div id="kesfet" class="allinone" style="padding-top: 0;">
-    <section class="video-gallery-section pb-5" data-bs-theme="dark" style="background-color: #121212; padding-top: 0;">
-      <style>
-        .video-gallery-section .hero-video-container {
-          width: 100%;
-          max-height: 70vh;
-          overflow: hidden;
-          position: relative;
-          margin-bottom: 4rem;
-          cursor: pointer;
-          /* Tıklanabilir olduğunu belli eder */
-        }
-  
-        .video-gallery-section .hero-video-container video {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-  
-        .video-gallery-section .section-title {
-          font-size: 1.75rem;
-          font-weight: 700;
-          letter-spacing: -0.02em;
-          color: #ffffff;
-        }
-  
-        .video-gallery-section .gallery-swiper .swiper-slide {
-          aspect-ratio: 585 / 438;
-          overflow: hidden;
-          border-radius: 8px;
-          background-color: #1e1e1e;
-        }
-  
-        .video-gallery-section .gallery-swiper .swiper-slide img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-  
-        .video-gallery-section .swiper-button-next,
-        .video-gallery-section .swiper-button-prev {
-          color: #ffffff;
-        }
-  
-        .video-gallery-section .swiper-pagination-bullet {
-          background: #ffffff;
-        }
-      </style>
-  
-      <div class="hero-video-container">
-        <video id="hero-main-video" src="new2026/1.mp4" autoplay loop muted playsinline></video>
-      </div>
-  
-      <div class="container mb-5">
-        <div class="row mb-3">
-          <div class="col-12">
-            <h3 class="section-title">Dış Görseller</h3>
-          </div>
-        </div>
-  
-        <div class="swiper gallery-swiper custom-dis-swiper">
-          <div class="swiper-wrapper" id="dis-gorseller-wrapper"></div>
-  
-          <div class="swiper-pagination custom-dis-pagination mt-4 position-relative bottom-0"></div>
-          <div class="swiper-button-next custom-dis-next d-none d-md-flex"></div>
-          <div class="swiper-button-prev custom-dis-prev d-none d-md-flex"></div>
-        </div>
-      </div>
-  
-      <div class="container pt-4">
-        <div class="row mb-3">
-          <div class="col-12">
-            <h3 class="section-title">İç Görseller</h3>
-          </div>
-        </div>
-  
-        <div class="swiper gallery-swiper custom-ic-swiper">
-          <div class="swiper-wrapper" id="ic-gorseller-wrapper"></div>
-  
-          <div class="swiper-pagination custom-ic-pagination mt-4 position-relative bottom-0"></div>
-          <div class="swiper-button-next custom-ic-next d-none d-md-flex"></div>
-          <div class="swiper-button-prev custom-ic-prev d-none d-md-flex"></div>
-        </div>
-      </div>
-  
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
+<div id="kesfet" class="allinone" style="padding-top: 0;">
+  <section class="video-gallery-section pb-5" data-bs-theme="dark" style="background-color: #121212; padding-top: 0;">
+    <style>
+      .video-gallery-section .hero-video-container {
+        width: 100%;
+        max-height: 70vh;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 4rem;
+        cursor: pointer;
+        /* Tıklanabilir olduğunu belli eder */
+      }
 
-          // --- VİDEO TIKLAMA VE SES AÇMA MANTIĞI ---
-          const heroVideo = document.getElementById('hero-main-video');
-          heroVideo.addEventListener('click', function () {
-            if (this.muted) {
-              this.muted = false; // Sesi aç
-              this.setAttribute('controls', 'true'); // Butonları (timeline, ses vs.) göster
-            }
-          });
+      .video-gallery-section .hero-video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
 
-          // --- GÖRSEL DÖNGÜLERİ ---
-          const disWrapper = document.getElementById('dis-gorseller-wrapper');
-          for (let i = 1; i <= 13; i++) {
-            disWrapper.innerHTML += `
-                            <div class="swiper-slide">
-                                <img src="new2026/dis (${i}).jpeg" alt="Dış Görsel ${i}" loading="lazy">
-                            </div>
-                        `;
+      .video-gallery-section .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+
+      .video-gallery-section .gallery-swiper .swiper-slide {
+        aspect-ratio: 585 / 438;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #1e1e1e;
+      }
+
+      .video-gallery-section .gallery-swiper .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .video-gallery-section .swiper-button-next,
+      .video-gallery-section .swiper-button-prev {
+        color: #ffffff;
+      }
+
+      .video-gallery-section .swiper-pagination-bullet {
+        background: #ffffff;
+      }
+    </style>
+
+    <div class="hero-video-container">
+      <video id="hero-main-video" src="new2026/1.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <div class="container mb-5">
+      <div class="row mb-3">
+        <div class="col-12">
+          <h3 class="section-title">Dış Görseller</h3>
+        </div>
+      </div>
+
+      <div class="swiper gallery-swiper custom-dis-swiper">
+        <div class="swiper-wrapper" id="dis-gorseller-wrapper"></div>
+
+        <div class="swiper-pagination custom-dis-pagination mt-4 position-relative bottom-0"></div>
+        <div class="swiper-button-next custom-dis-next d-none d-md-flex"></div>
+        <div class="swiper-button-prev custom-dis-prev d-none d-md-flex"></div>
+      </div>
+    </div>
+
+    <div class="container pt-4">
+      <div class="row mb-3">
+        <div class="col-12">
+          <h3 class="section-title">İç Görseller</h3>
+        </div>
+      </div>
+
+      <div class="swiper gallery-swiper custom-ic-swiper">
+        <div class="swiper-wrapper" id="ic-gorseller-wrapper"></div>
+
+        <div class="swiper-pagination custom-ic-pagination mt-4 position-relative bottom-0"></div>
+        <div class="swiper-button-next custom-ic-next d-none d-md-flex"></div>
+        <div class="swiper-button-prev custom-ic-prev d-none d-md-flex"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+
+        // --- VİDEO TIKLAMA VE SES AÇMA MANTIĞI ---
+        const heroVideo = document.getElementById('hero-main-video');
+        heroVideo.addEventListener('click', function () {
+          if (this.muted) {
+            this.muted = false; // Sesi aç
+            this.setAttribute('controls', 'true'); // Butonları (timeline, ses vs.) göster
           }
-
-          const icWrapper = document.getElementById('ic-gorseller-wrapper');
-          for (let i = 1; i <= 29; i++) {
-            icWrapper.innerHTML += `
-                            <div class="swiper-slide">
-                                <img src="new2026/ic (${i}).jpeg" alt="İç Görsel ${i}" loading="lazy">
-                            </div>
-                        `;
-          }
-
-          // --- SWIPER AYARLARI ---
-          const swiperBreakpoints = {
-            576: { slidesPerView: 1.5, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
-            992: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false }
-          };
-
-          new Swiper('.custom-dis-swiper', {
-            slidesPerView: 1.2,
-            spaceBetween: 15,
-            centeredSlides: true,
-            loop: true,
-            grabCursor: true,
-            pagination: { el: '.custom-dis-swiper .custom-dis-pagination', clickable: true },
-            navigation: { nextEl: '.custom-dis-swiper .custom-dis-next', prevEl: '.custom-dis-swiper .custom-dis-prev' },
-            breakpoints: swiperBreakpoints
-          });
-
-          new Swiper('.custom-ic-swiper', {
-            slidesPerView: 1.2,
-            spaceBetween: 15,
-            centeredSlides: true,
-            loop: true,
-            grabCursor: true,
-            pagination: { el: '.custom-ic-swiper .custom-ic-pagination', clickable: true },
-            navigation: { nextEl: '.custom-ic-swiper .custom-ic-next', prevEl: '.custom-ic-swiper .custom-ic-prev' },
-            breakpoints: swiperBreakpoints
-          });
         });
-      </script>
-    </section>
-  </div>
 
-  <div id="kesfet" class="allinone">
-      <!-- Why Us Section -->
-      <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-    
-        <div class="container">
-    
-          <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-    
-            <div class="col-xl-4 img-bg" data-aos-delay="100" style="padding:0; overflow:hidden; position:relative;">
-              <video id="projeVideo" src="WhatsApp Video 2025-11-23 at 14.42.04.mp4" autoplay muted loop playsinline
-                style="width:100%; height:100%; object-fit:cover; display:block;">
-              </video>
-            
-              <div id="videoOverlay" style="position:absolute; inset:0; cursor:pointer;">
-              </div>
-            </div>
-            
-            <script>
-              const video = document.getElementById('projeVideo');
-              const overlay = document.getElementById('videoOverlay');
+        // --- GÖRSEL DÖNGÜLERİ ---
+        const disWrapper = document.getElementById('dis-gorseller-wrapper');
+        for (let i = 1; i <= 13; i++) {
+          disWrapper.innerHTML += `
+                                <div class="swiper-slide">
+                                    <img src="new2026/dis (${i}).jpeg" alt="Dış Görsel ${i}" loading="lazy">
+                                </div>
+                            `;
+        }
 
-              overlay.addEventListener('click', () => {
-                video.muted = false;
-                video.controls = true;
-                overlay.style.display = 'none';
-                video.play();
-              });
-            </script>
+        const icWrapper = document.getElementById('ic-gorseller-wrapper');
+        for (let i = 1; i <= 29; i++) {
+          icWrapper.innerHTML += `
+                                <div class="swiper-slide">
+                                    <img src="new2026/ic (${i}).jpeg" alt="İç Görsel ${i}" loading="lazy">
+                                </div>
+                            `;
+        }
 
-    
-            <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-   
-            <div class="item">
-              <h3 class="mb-3 project-title0">
-                <span style="color: rgb(255, 173, 173);">
-                  GOLD PALAS & SAFİR PALAS – PURSAKLAR
-                </span><br>
-                %50 Peşinat – Kalan tutar için <strong>18 ve 24 Ay Vade İmkanı</strong>.
-              </h3>
-            
-              <p>
-                Ankara’nın hızla değer kazanan bölgesi Pursaklar Saray Mahallesi’nde;
-                modern mimariyi, konforlu iç mekânları ve kazançlı ticari alanları bir araya getiren,
-                <strong>yan yana yükselen iki prestijli proje</strong>. Toplamda <strong>120 adet 160 m² büyüklüğünde 4,5+1
-                  daire</strong>
-                ve <strong>3.000 m² ticari alandan</strong> oluşan bu özel yaşam kompleksi, bölgenin standartlarını yeniden
-                belirliyor.
-              </p>
-            
-              <p style="font-weight: 300;">
-                İster hemen teslimat için gün sayın, ister geleceğe yatırım yapın;
-                geniş daire seçenekleri ve zengin site olanaklarıyla <strong>hem oturum hem yatırım için ideal</strong>
-                fırsatlar sunuyoruz.
-              </p>
-            
-              <ul>
-                <li>
-                  <i class="bi bi-check-circle"></i>
-                  <strong>GOLD PALAS (İnşaatı Başladı):</strong> 60 Daire ve 7 Cadde Mağazası.
-                  20 Ayda Teslim. <strong>%50 Nakit, kalanı 18 Ay Vade</strong>.
-                </li>
-                <li>
-                  <i class="bi bi-check-circle"></i>
-                  <strong>SAFİR PALAS (Yeni Proje):</strong> Ağustos 2026 Başlangıç.
-                  24 Ayda Teslim. <strong>%50 Nakit, kalanı 24 Ay Vade</strong>.
-                </li>
-                <li>
-                  <i class="bi bi-shield-check"></i>
-                  <strong>Maksimum Yapı Güvenliği:</strong> Zemin etütleri titizlikle yapılmış olup,
-                  <strong>Fore kazık sistemi</strong> ve <strong>radye temel</strong> teknolojisi ile depreme karşı tam dayanıklı
-                  inşa edilmektedir.
-                </li>
-                <li>
-                  <i class="bi bi-house-door"></i>
-                  <strong>Fonksiyonel ve Lüks İç Mekan:</strong> 160 m²'lik ferah 4,5+1 daire planı;
-                  özel <strong>çamaşır ve ütü odası</strong> ile geniş <strong>vestiyer odası</strong> gibi hayatınızı
-                  kolaylaştıracak ince detaylara sahiptir.
-                </li>
-                <li>
-                  <i class="bi bi-car-front"></i>
-                  <strong>Ortak Donatılar:</strong> Her daireye özel <strong>kapalı ve açık garaj</strong>, elektrikli araç şarj
-                  istasyonu,
-                  yerden ısıtma, çocuk oyun alanları, toplantı salonu ve mescit.
-                </li>
-              </ul>
-            
-              <p style="font-weight: 300;">
-                <strong>Projelerimiz</strong>, kaliteli malzeme kullanımı, modern tasarım anlayışı ve
-                titiz işçilikle inşa edilerek <strong>uzun yıllar değerini koruyan, güvenli bir yaşam alanı</strong>
-                oluşturmayı hedeflemektedir.
-              </p>
-            
-              <p style="font-weight: 300;">
-                <strong><i class="bi bi-calendar"></i> Teslimat Süreleri:</strong>
-                Gold Palas <strong>20 Ay</strong>, Safir Palas <strong>24 Ay</strong> sonunda teslim edilecektir.
-              </p>
-            
-              <p style="margin-top: 15px;">
-                <strong><i class="bi bi-geo-alt"></i> Adres</strong>
-              </p>
-              <p style="font-weight: 300;">
-                Pursaklar, Saray Mahallesi, Ankara (Kaymakamlığa yürüme mesafesi,
-                Devlet Hastanesi ve Havalimanına 5 dk uzaklık)
-              </p>
-            </div>
-   
-            </div>
-    
+        // --- SWIPER AYARLARI ---
+        const swiperBreakpoints = {
+          576: { slidesPerView: 1.5, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+          992: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false }
+        };
+
+        new Swiper('.custom-dis-swiper', {
+          slidesPerView: 1.2,
+          spaceBetween: 15,
+          centeredSlides: true,
+          loop: true,
+          grabCursor: true,
+          pagination: { el: '.custom-dis-swiper .custom-dis-pagination', clickable: true },
+          navigation: { nextEl: '.custom-dis-swiper .custom-dis-next', prevEl: '.custom-dis-swiper .custom-dis-prev' },
+          breakpoints: swiperBreakpoints
+        });
+
+        new Swiper('.custom-ic-swiper', {
+          slidesPerView: 1.2,
+          spaceBetween: 15,
+          centeredSlides: true,
+          loop: true,
+          grabCursor: true,
+          pagination: { el: '.custom-ic-swiper .custom-ic-pagination', clickable: true },
+          navigation: { nextEl: '.custom-ic-swiper .custom-ic-next', prevEl: '.custom-ic-swiper .custom-ic-prev' },
+          breakpoints: swiperBreakpoints
+        });
+      });
+    </script>
+  </section>
+</div>
+<br><br>
+
+<div id="kesfet" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-4 img-bg" data-aos-delay="100" style="padding:0; overflow:hidden; position:relative;">
+          <video id="projeVideo" src="WhatsApp Video 2025-11-23 at 14.42.04.mp4" autoplay muted loop playsinline
+            style="width:100%; height:100%; object-fit:cover; display:block;">
+          </video>
+
+          <div id="videoOverlay" style="position:absolute; inset:0; cursor:pointer;">
           </div>
-    
         </div>
-    
-      </section><!-- /Why Us Section -->
+
+        <script>
+          const video = document.getElementById('projeVideo');
+          const overlay = document.getElementById('videoOverlay');
+
+          overlay.addEventListener('click', () => {
+            video.muted = false;
+            video.controls = true;
+            overlay.style.display = 'none';
+            video.play();
+          });
+        </script>
+
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">
+              <span style="color: rgb(255, 173, 173);">
+                GOLD PALAS & SAFİR PALAS – PURSAKLAR
+              </span><br>
+              %50 Peşinat – Kalan tutar için <strong>18 ve 24 Ay Vade İmkanı</strong>.
+            </h3>
+
+            <p>
+              Ankara’nın hızla değer kazanan bölgesi Pursaklar Saray Mahallesi’nde;
+              modern mimariyi, konforlu iç mekânları ve kazançlı ticari alanları bir araya getiren,
+              <strong>yan yana yükselen iki prestijli proje</strong>. Toplamda <strong>120 adet 160 m² büyüklüğünde
+                4,5+1
+                daire</strong>
+              ve <strong>3.000 m² ticari alandan</strong> oluşan bu özel yaşam kompleksi, bölgenin standartlarını
+              yeniden
+              belirliyor.
+            </p>
+
+            <p style="font-weight: 300;">
+              İster hemen teslimat için gün sayın, ister geleceğe yatırım yapın;
+              geniş daire seçenekleri ve zengin site olanaklarıyla <strong>hem oturum hem yatırım için ideal</strong>
+              fırsatlar sunuyoruz.
+            </p>
+
+            <ul>
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <strong>GOLD PALAS (İnşaatı Başladı):</strong> 60 Daire ve 7 Cadde Mağazası.
+                20 Ayda Teslim. <strong>%50 Nakit, kalanı 18 Ay Vade</strong>.
+              </li>
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <strong>SAFİR PALAS (Yeni Proje):</strong> Ağustos 2026 Başlangıç.
+                24 Ayda Teslim. <strong>%50 Nakit, kalanı 24 Ay Vade</strong>.
+              </li>
+              <li>
+                <i class="bi bi-shield-check"></i>
+                <strong>Maksimum Yapı Güvenliği:</strong> Zemin etütleri titizlikle yapılmış olup,
+                <strong>Fore kazık sistemi</strong> ve <strong>radye temel</strong> teknolojisi ile depreme karşı tam
+                dayanıklı
+                inşa edilmektedir.
+              </li>
+              <li>
+                <i class="bi bi-house-door"></i>
+                <strong>Fonksiyonel ve Lüks İç Mekan:</strong> 160 m²'lik ferah 4,5+1 daire planı;
+                özel <strong>çamaşır ve ütü odası</strong> ile geniş <strong>vestiyer odası</strong> gibi hayatınızı
+                kolaylaştıracak ince detaylara sahiptir.
+              </li>
+              <li>
+                <i class="bi bi-car-front"></i>
+                <strong>Ortak Donatılar:</strong> Her daireye özel <strong>kapalı ve açık garaj</strong>, elektrikli
+                araç şarj
+                istasyonu,
+                yerden ısıtma, çocuk oyun alanları, toplantı salonu ve mescit.
+              </li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              <strong>Projelerimiz</strong>, kaliteli malzeme kullanımı, modern tasarım anlayışı ve
+              titiz işçilikle inşa edilerek <strong>uzun yıllar değerini koruyan, güvenli bir yaşam alanı</strong>
+              oluşturmayı hedeflemektedir.
+            </p>
+
+            <p style="font-weight: 300;">
+              <strong><i class="bi bi-calendar"></i> Teslimat Süreleri:</strong>
+              Gold Palas <strong>20 Ay</strong>, Safir Palas <strong>24 Ay</strong> sonunda teslim edilecektir.
+            </p>
+
+            <p style="margin-top: 15px;">
+              <strong><i class="bi bi-geo-alt"></i> Adres</strong>
+            </p>
+            <p style="font-weight: 300;">
+              Pursaklar, Saray Mahallesi, Ankara (Kaymakamlığa yürüme mesafesi,
+              Devlet Hastanesi ve Havalimanına 5 dk uzaklık)
+            </p>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
+
+  </section><!-- /Why Us Section -->
+
+</div>
 <br><br>
-  <div id="kesfet" class="allinone">
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-  
-      <div class="container">
-  
-        <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-  
-          <div class="col-xl-5 img-bg" data-aos-delay="100">
-            <img src="img/vip/a (5).jpg" alt="">
-          </div>
-  
-          <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-  
-            <div class="item">
-              <h3 class="mb-3 project-title0">Valens VIP</h3>
-              <p>Modern mimari ve konforlu yaşam alanlarını bir araya getiren prestijli bir konut projesi.</p>
-  
-              <p style="font-weight: 300;">
-                <strong>Valens VIP projemiz</strong>, toplamda <strong>48 bağımsız bölümden</strong> oluşan özel bir konut
-                projesidir.
-                Her detayı titizlikle düşünülerek tasarlanan bu proje, ferah ve kullanışlı yaşam alanları sunmaktadır.
-              </p>
-  
-              <ul>
-                <li><i class="bi bi-check-circle"></i> <strong>44 adet 2+1 daire:</strong> Her biri <strong>90 m²</strong>
-                  genişliğinde, modern ve fonksiyonel yaşam alanları sunmaktadır.</li>
-                <li><i class="bi bi-check-circle"></i> <strong>4 adet 4+1 Loft dubleks daire:</strong> Her biri
-                  <strong>190
-                    m²</strong> olup, geniş aileler için konforlu ve estetik bir yaşam alanı sağlamaktadır.</li>
-              </ul>
-  
-              <p style="font-weight: 300;">
-                <strong>Valens VIP</strong>, kaliteli malzeme kullanımı, modern tasarım anlayışı ve üst düzey işçilikle
-                inşa
-                edilerek
-                <strong>konforlu ve güvenli bir yaşam alanı</strong> sunmayı hedeflemektedir.
-              </p>
-  
-              <p style="margin-top: 15px;">
-                <strong><i class="bi bi-geo-alt"></i> Adres</strong>
-              <p style="font-weight: 300;">Pursaklar, Saray Cumhuriyet Mahallesi, As Caddesi No: 27, Ankara</p>
-              </p>
-  
-            </div>
-  
-  
-          </div>
-  
+
+<div id="kesfet" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-5 img-bg" data-aos-delay="100">
+          <img src="img2025/1 (2).jpeg" alt="">
         </div>
-  
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0"><span style="color: rgb(255, 173, 173); ">2025 Projesi - BU FIRSAT
+                KAÇMAZ!</span><br>
+              %50 peşinat – kalan tutar vade farksız 18 ay taksit.</h3>
+            <p>Modern mimariyi ve sosyal yaşam alanlarını bir araya getiren prestijli bir konut projesi.</p>
+
+            <p style="font-weight: 300;">
+              <strong>Projemiz</strong>, toplamda <strong>58 bağımsız bölüm</strong> ve
+              <strong>700 m² cadde üzeri ticari alan</strong>dan oluşmaktadır.
+              Her detayı özenle tasarlanan bu proje, ferah ve güvenli yaşam alanları sunmaktadır.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>58 adet 4.5+1 daire:</strong> Her biri <strong>170
+                  m²</strong>
+                genişliğinde, giyinme odası ve çift banyosu ile konforlu ve fonksiyonel yaşam alanı sağlar.</li>
+              <li><i class="bi bi-check-circle"></i> <strong>700 m² ticari alan:</strong> Cadde üzeri konumu ile
+                yüksek görünürlük ve yatırım fırsatı sunar.</li>
+              <li><i class="bi bi-check-circle"></i> <strong>Sosyal alanlar:</strong> Yerden ısıtma sistemi, kapalı &
+                açık
+                otopark,
+                çocuk oyun alanları, yürüyüş parkuru ve basketbol sahası.</li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              <strong>Projemiz</strong>, kaliteli malzeme kullanımı, modern tasarım anlayışı ve
+              üst düzey işçilikle inşa edilerek <strong>konforlu ve güvenli bir yaşam</strong> sunmayı hedeflemektedir.
+            </p>
+
+            <p style="font-weight: 300;">
+              <strong><i class="bi bi-calendar"></i> Proje Takvimi:</strong> Başlangıç: 30.11.2025 – Teslim: 24 ayda
+              tamamlanacaktır.
+            </p>
+
+
+
+            <p style="margin-top: 15px;">
+              <strong><i class="bi bi-geo-alt"></i> Adres</strong>
+            </p>
+            <p style="font-weight: 300;">
+              Pursaklar, Saray Mahallesi, Ankara (Kaymakamlığa yürüme mesafesi,
+              Devlet Hastanesi ve Havalimanına 5 dk uzaklık)
+            </p>
+          </div>
+
+
+
+        </div>
+
       </div>
-  
-    </section><!-- /Why Us Section -->
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background"
-      style="padding-top: 10px; background: transparent;">
-  
-  
-  
-      <div class="container" data-aos-delay="100">
-  
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-                        {
-                          "loop": true,
-                          "speed": 600,
-                          "autoplay": {
-                            "delay": 5000
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section dark-background"
+    style="padding-top: 10px; background: transparent;">
+
+
+
+    <div class="container" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+                              {
+                                "loop": true,
+                                "speed": 600,
+                                "autoplay": {
+                                  "delay": 5000
+                                },
+                                "slidesPerView": "auto",
+                                "pagination": {
+                                  "el": ".swiper-pagination",
+                                  "type": "bullets",
+                                  "dynamicBullets": "true",
+                                  "clickable": true
+                                },
+                                "breakpoints": {
+                                  "320": {
+                                    "slidesPerView": 1,
+                                    "spaceBetween": 40
+                                  },
+                                  "1200": {
+                                    "slidesPerView": 3,
+                                    "spaceBetween": 1
+                                  }
+                                }
+                              }
+                            </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img2025/1 (1).jpeg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img2025/1 (2).jpeg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img2025/1 (3).jpeg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img2025/1 (4).jpeg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img2025/1 (5).jpeg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+</div>
+
+<br><br>
+
+<div id="kesfet" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-5 img-bg" data-aos-delay="100">
+          <img src="img/vip/a (5).jpg" alt="">
+        </div>
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">Valens VIP</h3>
+            <p>Modern mimari ve konforlu yaşam alanlarını bir araya getiren prestijli bir konut projesi.</p>
+
+            <p style="font-weight: 300;">
+              <strong>Valens VIP projemiz</strong>, toplamda <strong>48 bağımsız bölümden</strong> oluşan özel bir konut
+              projesidir.
+              Her detayı titizlikle düşünülerek tasarlanan bu proje, ferah ve kullanışlı yaşam alanları sunmaktadır.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>44 adet 2+1 daire:</strong> Her biri <strong>90 m²</strong>
+                genişliğinde, modern ve fonksiyonel yaşam alanları sunmaktadır.</li>
+              <li><i class="bi bi-check-circle"></i> <strong>4 adet 4+1 Loft dubleks daire:</strong> Her biri
+                <strong>190
+                  m²</strong> olup, geniş aileler için konforlu ve estetik bir yaşam alanı sağlamaktadır.</li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              <strong>Valens VIP</strong>, kaliteli malzeme kullanımı, modern tasarım anlayışı ve üst düzey işçilikle
+              inşa
+              edilerek
+              <strong>konforlu ve güvenli bir yaşam alanı</strong> sunmayı hedeflemektedir.
+            </p>
+
+            <p style="margin-top: 15px;">
+              <strong><i class="bi bi-geo-alt"></i> Adres</strong>
+            <p style="font-weight: 300;">Pursaklar, Saray Cumhuriyet Mahallesi, As Caddesi No: 27, Ankara</p>
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section dark-background"
+    style="padding-top: 10px; background: transparent;">
+
+
+
+    <div class="container" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+                      {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": {
+                          "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "pagination": {
+                          "el": ".swiper-pagination",
+                          "type": "bullets",
+                          "dynamicBullets": "true",
+                          "clickable": true
+                        },
+                        "breakpoints": {
+                          "320": {
+                            "slidesPerView": 1,
+                            "spaceBetween": 40
                           },
-                          "slidesPerView": "auto",
-                          "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "dynamicBullets": "true",
-                            "clickable": true
-                          },
-                          "breakpoints": {
-                            "320": {
-                              "slidesPerView": 1,
-                              "spaceBetween": 40
-                            },
-                            "1200": {
-                              "slidesPerView": 3,
-                              "spaceBetween": 1
-                            }
+                          "1200": {
+                            "slidesPerView": 3,
+                            "spaceBetween": 1
                           }
                         }
-                      </script>
-          <div class="swiper-wrapper">
-  
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (1).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (2).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (3).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (4).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (5).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (6).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (7).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/a (8).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (1).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (2).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (3).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (4).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (5).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (6).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (7).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (8).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (9).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (10).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (11).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (12).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (13).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (14).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (15).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (16).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (17).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (18).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (19).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (20).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (21).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
-              <div class="testimonial-item" style="background: transparent;">
-                <img src="img/vip/1 (22).jpg" alt="">
-              </div>
-            </div><!-- End testimonial item -->
-  
-  
-  
-          </div>
-          <div class="swiper-pagination"></div>
+                      }
+                    </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (1).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (2).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (3).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (4).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (5).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (6).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (7).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/a (8).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (1).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (2).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (3).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (4).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (5).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (6).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (7).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (8).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (9).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (10).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (11).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (12).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (13).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (14).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (15).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (16).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (17).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (18).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (19).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (20).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (21).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+          <div class="swiper-slide">
+            <div class="testimonial-item" style="background: transparent;">
+              <img src="img/vip/1 (22).jpg" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+
+
         </div>
-  
+        <div class="swiper-pagination"></div>
       </div>
-  
-    </section><!-- /Testimonials Section -->
-  </div>
-  
-  
-  
-  
-  
-  <div id="proje" class="allinone">
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-  
-      <div class="container">
-  
-        <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-  
-          <div class="col-xl-5" data-aos-delay="100">
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/2021/5.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2021/3.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2021/4.png" alt=""></div>
-  
-              </div>
-              <div class="swiper-pagination"></div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+</div>
+
+
+
+
+
+<div id="proje" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-5" data-aos-delay="100">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/2021/5.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2021/3.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2021/4.png" alt=""></div>
+
             </div>
-  
-  
-  
+            <div class="swiper-pagination"></div>
           </div>
-  
-          <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-  
-            <div class="item">
-              <h3 class="mb-3 project-title0">2021 Yılında Tamamlanan Proje</h3>
-              <p>Geniş aileler için konforlu ve modern bir yaşam alanı.</p>
-  
-              <p style="font-weight: 300;">
-                <strong>2021 yılında tamamlanan projemiz</strong>, toplamda <strong>28 adet 4+1 daireden</strong>
-                oluşmaktadır.
-                Aile yaşamına uygun olarak tasarlanmış geniş ve ferah yaşam alanları sunmaktadır.
-              </p>
-  
-              <ul>
-                <li><i class="bi bi-check-circle"></i> <strong>28 adet 4+1 daire:</strong> Aileler için geniş ve
-                  kullanışlı yaşam
-                  alanları sunmaktadır.</li>
-              </ul>
-  
-              <p style="font-weight: 300;">
-                Kaliteli işçilik, modern mimari ve estetik tasarımı ile konforlu ve huzurlu bir yaşam alanı sunmaktadır.
-              </p>
-            </div>
-  
-  
-  
-          </div>
-  
+
+
+
         </div>
-  
-      </div>
-  
-    </section><!-- /Why Us Section -->
-  
-  
-  </div>
-  <div id="proje" class="allinone">
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-  
-      <div class="container">
-  
-        <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-  
-          <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-  
-            <div class="item">
-              <h3 class="mb-3 project-title0">2020 Yılında Tamamlanan Proje</h3>
-              <p>Şehir yaşamına uyumlu, konforlu ve modern bir yapı.</p>
-  
-              <p style="font-weight: 300;">
-                <strong>2020 yılında tamamlanan projemiz</strong>, toplamda <strong>12 konut ve 2 ticari
-                  dükkandan</strong>
-                oluşmaktadır.
-                Hem yaşam hem de ticaret için uygun alanlar sunan proje, yüksek kalite anlayışıyla inşa edilmiştir.
-              </p>
-  
-              <ul>
-                <li><i class="bi bi-check-circle"></i> <strong>12 adet daire:</strong> Şehir yaşamına uygun, konforlu
-                  yaşam alanları
-                  sunmaktadır.</li>
-                <li><i class="bi bi-check-circle"></i> <strong>2 adet ticari dükkan:</strong> İşletmeler için elverişli
-                  alanlar
-                  sağlamaktadır.</li>
-              </ul>
-  
-              <p style="font-weight: 300;">
-                Estetik detayları ve sağlam yapısıyla güvenli ve modern bir yaşam alanı sunmaktadır.
-              </p>
-            </div>
-  
-  
-  
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">2021 Yılında Tamamlanan Proje</h3>
+            <p>Geniş aileler için konforlu ve modern bir yaşam alanı.</p>
+
+            <p style="font-weight: 300;">
+              <strong>2021 yılında tamamlanan projemiz</strong>, toplamda <strong>28 adet 4+1 daireden</strong>
+              oluşmaktadır.
+              Aile yaşamına uygun olarak tasarlanmış geniş ve ferah yaşam alanları sunmaktadır.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>28 adet 4+1 daire:</strong> Aileler için geniş ve
+                kullanışlı yaşam
+                alanları sunmaktadır.</li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              Kaliteli işçilik, modern mimari ve estetik tasarımı ile konforlu ve huzurlu bir yaşam alanı sunmaktadır.
+            </p>
           </div>
-  
-          <div class="col-xl-5" data-aos-delay="100">
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/2020/7.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2020/8.png" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-  
-  
-  
-          </div>
-  
-  
-  
+
+
+
         </div>
-  
+
       </div>
-  
-    </section><!-- /Why Us Section -->
-  
-  
-  </div>
-  <div id="proje" class="allinone">
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-  
-      <div class="container">
-  
-        <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-  
-          <div class="col-xl-5" data-aos-delay="100">
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/2017/8.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2017/9.png" alt=""></div>
-  
-  
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-  
-  
-  
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+
+
+</div>
+<div id="proje" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">2020 Yılında Tamamlanan Proje</h3>
+            <p>Şehir yaşamına uyumlu, konforlu ve modern bir yapı.</p>
+
+            <p style="font-weight: 300;">
+              <strong>2020 yılında tamamlanan projemiz</strong>, toplamda <strong>12 konut ve 2 ticari
+                dükkandan</strong>
+              oluşmaktadır.
+              Hem yaşam hem de ticaret için uygun alanlar sunan proje, yüksek kalite anlayışıyla inşa edilmiştir.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>12 adet daire:</strong> Şehir yaşamına uygun, konforlu
+                yaşam alanları
+                sunmaktadır.</li>
+              <li><i class="bi bi-check-circle"></i> <strong>2 adet ticari dükkan:</strong> İşletmeler için elverişli
+                alanlar
+                sağlamaktadır.</li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              Estetik detayları ve sağlam yapısıyla güvenli ve modern bir yaşam alanı sunmaktadır.
+            </p>
           </div>
-  
-          <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-  
-            <div class="item">
-              <h3 class="mb-3 project-title0">2017 Yılında Tamamlanan Proje</h3>
-              <p>Modern konutlar ve ticari alanlarla donatılmış özel bir yapı.</p>
-  
-              <p style="font-weight: 300;">
-                <strong>2017 yılında tamamlanan projemiz</strong>, toplamda <strong>12 konut ve 4 ticari
-                  dükkandan</strong>
-                oluşmaktadır.
-                İşlevsel tasarımı ve konumu sayesinde hem yaşam hem de ticaret için ideal bir ortam sunmaktadır.
-              </p>
-  
-              <ul>
-                <li><i class="bi bi-check-circle"></i> <strong>12 adet daire:</strong> Geniş ve modern yaşam alanları
-                  sunmaktadır.
-                </li>
-                <li><i class="bi bi-check-circle"></i> <strong>4 adet ticari dükkan:</strong> İşletmelere uygun, merkezi
-                  konumdadır.
-                </li>
-              </ul>
-  
-              <p style="font-weight: 300;">
-                Modern yapısı ve kaliteli işçiliğiyle ön plana çıkan bu proje, huzurlu ve işlevsel bir yaşam alanı
-                sağlamaktadır.
-              </p>
-            </div>
-  
-  
-  
-          </div>
-  
+
+
+
         </div>
-  
+
+        <div class="col-xl-5" data-aos-delay="100">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/2020/7.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2020/8.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+
+
+        </div>
+
+
+
       </div>
-  
-    </section><!-- /Why Us Section -->
-  
-  
-  </div>
-  <div id="proje" class="allinone">
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section dark-background" style="background: transparent;">
-  
-      <div class="container">
-  
-        <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
-  
-          <div class="col-xl-7 slides position-relative" data-aos-delay="200">
-  
-            <div class="item">
-              <h3 class="mb-3 project-title0">2014 Yılında Tamamlanan Proje</h3>
-              <p>Modern yaşam ve ticari alanları bir araya getiren konforlu bir yapı.</p>
-  
-              <p style="font-weight: 300;">
-                <strong>2014 yılında tamamlanan projemiz</strong>, toplamda <strong>24 konut ve 3 ticari
-                  dükkandan</strong>
-                oluşmaktadır.
-                Hem konut sahiplerine hem de işletmelere uygun bir yapı sunan proje, kalite ve konforu ön planda
-                tutmaktadır.
-              </p>
-  
-              <ul>
-                <li><i class="bi bi-check-circle"></i> <strong>24 adet 3+1 daire:</strong> Geniş ve kullanışlı alanlar
-                  sunmaktadır.
-                </li>
-                <li><i class="bi bi-check-circle"></i> <strong>3 adet ticari dükkan:</strong> İşletmelere uygun, merkezi
-                  bir
-                  konumdadır.</li>
-              </ul>
-  
-              <p style="font-weight: 300;">
-                Kaliteli malzeme kullanımı ve modern tasarımı ile dikkat çeken bu proje, konforlu ve güvenli bir yaşam
-                alanı
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+
+
+</div>
+<div id="proje" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-5" data-aos-delay="100">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/2017/8.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2017/9.png" alt=""></div>
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+
+
+        </div>
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">2017 Yılında Tamamlanan Proje</h3>
+            <p>Modern konutlar ve ticari alanlarla donatılmış özel bir yapı.</p>
+
+            <p style="font-weight: 300;">
+              <strong>2017 yılında tamamlanan projemiz</strong>, toplamda <strong>12 konut ve 4 ticari
+                dükkandan</strong>
+              oluşmaktadır.
+              İşlevsel tasarımı ve konumu sayesinde hem yaşam hem de ticaret için ideal bir ortam sunmaktadır.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>12 adet daire:</strong> Geniş ve modern yaşam alanları
                 sunmaktadır.
-              </p>
-            </div>
-  
-  
-  
+              </li>
+              <li><i class="bi bi-check-circle"></i> <strong>4 adet ticari dükkan:</strong> İşletmelere uygun, merkezi
+                konumdadır.
+              </li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              Modern yapısı ve kaliteli işçiliğiyle ön plana çıkan bu proje, huzurlu ve işlevsel bir yaşam alanı
+              sağlamaktadır.
+            </p>
           </div>
-  
-          <div class="col-xl-5" data-aos-delay="100">
-            <!-- Swiper -->
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/2014/10.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2014/11.png" alt=""></div>
-                <div class="swiper-slide"><img src="img/2014/12.png" alt=""></div>
-  
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-  
-  
-  
-          </div>
-  
-  
-  
+
+
+
         </div>
-  
+
       </div>
-  
-    </section><!-- /Why Us Section -->
-  
-  
-  </div>
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+
+
+</div>
+<div id="proje" class="allinone">
+  <!-- Why Us Section -->
+  <section id="why-us" class="why-us section dark-background" style="background: transparent;">
+
+    <div class="container">
+
+      <div class="row g-0" style="border-radius: 8px; overflow: hidden;">
+
+        <div class="col-xl-7 slides position-relative" data-aos-delay="200">
+
+          <div class="item">
+            <h3 class="mb-3 project-title0">2014 Yılında Tamamlanan Proje</h3>
+            <p>Modern yaşam ve ticari alanları bir araya getiren konforlu bir yapı.</p>
+
+            <p style="font-weight: 300;">
+              <strong>2014 yılında tamamlanan projemiz</strong>, toplamda <strong>24 konut ve 3 ticari
+                dükkandan</strong>
+              oluşmaktadır.
+              Hem konut sahiplerine hem de işletmelere uygun bir yapı sunan proje, kalite ve konforu ön planda
+              tutmaktadır.
+            </p>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <strong>24 adet 3+1 daire:</strong> Geniş ve kullanışlı alanlar
+                sunmaktadır.
+              </li>
+              <li><i class="bi bi-check-circle"></i> <strong>3 adet ticari dükkan:</strong> İşletmelere uygun, merkezi
+                bir
+                konumdadır.</li>
+            </ul>
+
+            <p style="font-weight: 300;">
+              Kaliteli malzeme kullanımı ve modern tasarımı ile dikkat çeken bu proje, konforlu ve güvenli bir yaşam
+              alanı
+              sunmaktadır.
+            </p>
+          </div>
+
+
+
+        </div>
+
+        <div class="col-xl-5" data-aos-delay="100">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/2014/10.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2014/11.png" alt=""></div>
+              <div class="swiper-slide"><img src="img/2014/12.png" alt=""></div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </section><!-- /Why Us Section -->
+
+
+</div>
 
     <section id="contact" class="contact section dark-background">
     
