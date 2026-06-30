@@ -75,6 +75,155 @@
     </div>
   </div>
 
+  <div id="kesfet" class="allinone" style="padding-top: 0;">
+    <section class="video-gallery-section pb-5" data-bs-theme="dark" style="background-color: #121212; padding-top: 0;">
+      <style>
+        .video-gallery-section .hero-video-container {
+          width: 100%;
+          max-height: 70vh;
+          overflow: hidden;
+          position: relative;
+          margin-bottom: 4rem;
+          cursor: pointer;
+          /* Tıklanabilir olduğunu belli eder */
+        }
+  
+        .video-gallery-section .hero-video-container video {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+  
+        .video-gallery-section .section-title {
+          font-size: 1.75rem;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+  
+        .video-gallery-section .gallery-swiper .swiper-slide {
+          aspect-ratio: 585 / 438;
+          overflow: hidden;
+          border-radius: 8px;
+          background-color: #1e1e1e;
+        }
+  
+        .video-gallery-section .gallery-swiper .swiper-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+  
+        .video-gallery-section .swiper-button-next,
+        .video-gallery-section .swiper-button-prev {
+          color: #ffffff;
+        }
+  
+        .video-gallery-section .swiper-pagination-bullet {
+          background: #ffffff;
+        }
+      </style>
+  
+      <div class="hero-video-container">
+        <video id="hero-main-video" src="new2026/1.mp4" autoplay loop muted playsinline></video>
+      </div>
+  
+      <div class="container mb-5">
+        <div class="row mb-3">
+          <div class="col-12">
+            <h3 class="section-title">Dış Görseller</h3>
+          </div>
+        </div>
+  
+        <div class="swiper gallery-swiper custom-dis-swiper">
+          <div class="swiper-wrapper" id="dis-gorseller-wrapper"></div>
+  
+          <div class="swiper-pagination custom-dis-pagination mt-4 position-relative bottom-0"></div>
+          <div class="swiper-button-next custom-dis-next d-none d-md-flex"></div>
+          <div class="swiper-button-prev custom-dis-prev d-none d-md-flex"></div>
+        </div>
+      </div>
+  
+      <div class="container pt-4">
+        <div class="row mb-3">
+          <div class="col-12">
+            <h3 class="section-title">İç Görseller</h3>
+          </div>
+        </div>
+  
+        <div class="swiper gallery-swiper custom-ic-swiper">
+          <div class="swiper-wrapper" id="ic-gorseller-wrapper"></div>
+  
+          <div class="swiper-pagination custom-ic-pagination mt-4 position-relative bottom-0"></div>
+          <div class="swiper-button-next custom-ic-next d-none d-md-flex"></div>
+          <div class="swiper-button-prev custom-ic-prev d-none d-md-flex"></div>
+        </div>
+      </div>
+  
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+          // --- VİDEO TIKLAMA VE SES AÇMA MANTIĞI ---
+          const heroVideo = document.getElementById('hero-main-video');
+          heroVideo.addEventListener('click', function () {
+            if (this.muted) {
+              this.muted = false; // Sesi aç
+              this.setAttribute('controls', 'true'); // Butonları (timeline, ses vs.) göster
+            }
+          });
+
+          // --- GÖRSEL DÖNGÜLERİ ---
+          const disWrapper = document.getElementById('dis-gorseller-wrapper');
+          for (let i = 1; i <= 13; i++) {
+            disWrapper.innerHTML += `
+                            <div class="swiper-slide">
+                                <img src="new2026/dis (${i}).jpeg" alt="Dış Görsel ${i}" loading="lazy">
+                            </div>
+                        `;
+          }
+
+          const icWrapper = document.getElementById('ic-gorseller-wrapper');
+          for (let i = 1; i <= 29; i++) {
+            icWrapper.innerHTML += `
+                            <div class="swiper-slide">
+                                <img src="new2026/ic (${i}).jpeg" alt="İç Görsel ${i}" loading="lazy">
+                            </div>
+                        `;
+          }
+
+          // --- SWIPER AYARLARI ---
+          const swiperBreakpoints = {
+            576: { slidesPerView: 1.5, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+            992: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false }
+          };
+
+          new Swiper('.custom-dis-swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 15,
+            centeredSlides: true,
+            loop: true,
+            grabCursor: true,
+            pagination: { el: '.custom-dis-swiper .custom-dis-pagination', clickable: true },
+            navigation: { nextEl: '.custom-dis-swiper .custom-dis-next', prevEl: '.custom-dis-swiper .custom-dis-prev' },
+            breakpoints: swiperBreakpoints
+          });
+
+          new Swiper('.custom-ic-swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 15,
+            centeredSlides: true,
+            loop: true,
+            grabCursor: true,
+            pagination: { el: '.custom-ic-swiper .custom-ic-pagination', clickable: true },
+            navigation: { nextEl: '.custom-ic-swiper .custom-ic-next', prevEl: '.custom-ic-swiper .custom-ic-prev' },
+            breakpoints: swiperBreakpoints
+          });
+        });
+      </script>
+    </section>
+  </div>
 
   <div id="kesfet" class="allinone">
       <!-- Why Us Section -->
